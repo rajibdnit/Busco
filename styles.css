@@ -1,0 +1,113 @@
+/* styles.css - Busco UI mockup */
+:root{
+  --bg:#f7f9fb;
+  --panel:#ffffff;
+  --muted:#6b7280;
+  --primary:#2563eb; /* blue */
+  --accent:#10b981;  /* green */
+  --surface-2:#f3f4f6;
+  --radius:12px;
+  --gap:16px;
+  --max-width:1160px;
+  --shadow: 0 6px 18px rgba(15,23,42,0.06);
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font-sans);
+  background:var(--bg);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:24px;
+}
+
+.topbar{
+  max-width:var(--max-width);
+  margin:0 auto 18px auto;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  background:linear-gradient(90deg, rgba(37,99,235,0.95), rgba(16,185,129,0.95));
+  padding:12px 18px;
+  border-radius:var(--radius);
+  color:#fff;
+  box-shadow:var(--shadow);
+}
+
+.brand{font-weight:700;font-size:20px}
+.search-inline{display:flex;gap:10px;align-items:center;margin-left:20px;flex:1}
+.input{padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.2);min-width:180px;background:rgba(255,255,255,0.07);color:#fff}
+.input::placeholder{color:rgba(255,255,255,0.8)}
+.input.small{min-width:120px}
+.btn{padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.18);background:transparent;color:#fff;cursor:pointer}
+.btn.primary{background:#fff;color:var(--primary);font-weight:600}
+.top-actions{display:flex;gap:8px}
+
+.container{
+  max-width:var(--max-width);
+  margin:18px auto;
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:20px;
+  align-items:start;
+}
+
+.panel{
+  background:var(--panel);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:var(--shadow);
+}
+
+.left{display:flex;flex-direction:column;gap:16px}
+.right{display:flex;flex-direction:column;gap:16px}
+
+.trip-list{display:flex;flex-direction:column}
+.trip-card{
+  display:flex;
+  justify-content:space-between;
+  padding:12px;
+  border-radius:10px;
+  margin-top:12px;
+  border:1px solid #e6eefb;
+  cursor:pointer;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.trip-card:hover{transform:translateY(-4px);box-shadow:0 8px 20px rgba(15,23,42,0.06)}
+.trip-card.selected{border-color:rgba(37,99,235,0.28);background:linear-gradient(180deg,#eff6ff, #fff)}
+
+.trip-primary{display:flex;flex-direction:column}
+.route{font-weight:700;font-size:16px}
+.times{color:var(--muted);font-size:14px}
+.trip-meta{display:flex;gap:14px;color:var(--muted);align-items:center;font-size:13px}
+
+.detail .stop-seq{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.stop{display:flex;justify-content:space-between;padding:8px;border-radius:8px;background:var(--surface-2)}
+.stop.highlight{background:linear-gradient(90deg, rgba(16,185,129,0.08), rgba(37,99,235,0.04));font-weight:600}
+.time{color:var(--muted)}
+
+.map-placeholder{
+  height:360px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  border-radius:10px;
+  background:linear-gradient(135deg,#e7f0ff,#eefbf3);
+  font-weight:600;
+}
+
+.admin-cta .admin-actions{display:flex;gap:8px;margin-top:12px}
+.footer{max-width:var(--max-width);margin:20px auto;text-align:center;color:var(--muted)}
+
+@media (max-width:980px){
+  .container{grid-template-columns:1fr; padding-bottom:50px}
+  .right{order:-1}
+  .topbar{flex-direction:column;align-items:stretch;gap:10px}
+  .search-inline{flex-wrap:wrap}
+  .input{min-width:140px}
+}

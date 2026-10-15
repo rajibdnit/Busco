@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Busco — Bus Search UI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Busco</div>
+    <form class="search-inline" role="search" aria-label="Search trips">
+      <input class="input" placeholder="From: Central Station" aria-label="From" />
+      <input class="input" placeholder="To: City Square" aria-label="To"/>
+      <input class="input small" type="date" aria-label="Date" />
+      <input class="input small" type="time" aria-label="Time" />
+      <button class="btn primary">Search</button>
+    </form>
+    <nav class="top-actions">
+      <button class="btn icon">🏠</button>
+      <button class="btn">Admin</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="left">
+      <div class="panel">
+        <h2>Available trips</h2>
+        <div class="trip-list" role="list">
+          <article class="trip-card selected" role="listitem" tabindex="0">
+            <div class="trip-primary">
+              <div class="route">Route 12</div>
+              <div class="times">08:15 → 08:42</div>
+            </div>
+            <div class="trip-meta">
+              <span>27 min</span>
+              <span>1 transfer</span>
+              <span>$2.50</span>
+            </div>
+          </article>
+
+          <article class="trip-card" role="listitem" tabindex="0">
+            <div class="trip-primary">
+              <div class="route">Route 8</div>
+              <div class="times">08:22 → 08:51</div>
+            </div>
+            <div class="trip-meta">
+              <span>29 min</span>
+              <span>0 transfers</span>
+              <span>$2.50</span>
+            </div>
+          </article>
+
+          <article class="trip-card" role="listitem" tabindex="0">
+            <div class="trip-primary">
+              <div class="route">Route 5</div>
+              <div class="times">08:30 → 08:59</div>
+            </div>
+            <div class="trip-meta">
+              <span>29 min</span>
+              <span>0 transfers</span>
+              <span>$2.50</span>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="panel detail">
+        <h3>Selected trip: Route 12</h3>
+        <p class="muted">Central Station → City Square</p>
+        <div class="stop-seq">
+          <div class="stop">Central Station <span class="time">08:15</span></div>
+          <div class="stop">Market St <span class="time">08:23</span></div>
+          <div class="stop">River Rd <span class="time">08:34</span></div>
+          <div class="stop highlight">City Square <span class="time">08:42</span></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="right">
+      <div class="map panel">
+        <div class="map-placeholder">Map preview (placeholder)</div>
+      </div>
+      <div class="panel admin-cta">
+        <h4>Admin</h4>
+        <p>Manage stops, routes, trips and imports.</p>
+        <div class="admin-actions">
+          <button class="btn">Stops</button>
+          <button class="btn">Routes</button>
+          <button class="btn primary">Import GTFS</button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <small>© Busco — demo UI</small>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Mobile Screens — Busco</title>
+<style>
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;display:flex;gap:24px;padding:24px;background:#f3f4f6}
+  .phone{width:375px;border-radius:28px;padding:16px;background:#fff;box-shadow:0 12px 30px rgba(2,6,23,0.08)}
+  .header{display:flex;justify-content:space-between;align-items:center}
+  .brand{font-weight:700}
+  .search{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+  .input{padding:10px;border-radius:10px;border:1px solid #e6eefb}
+  .result-card{display:flex;justify-content:space-between;padding:12px;margin-top:12px;border-radius:10px;border:1px solid #e9f2ff}
+  .map{height:220px;background:linear-gradient(135deg,#e7f0ff,#eefbf3);border-radius:12px;margin-top:12px;display:flex;align-items:center;justify-content:center;color:#6b7280}
+  .bottom{display:flex;gap:8px;margin-top:12px}
+</style>
+</head>
+<body>
+  <div class="phone" aria-label="Search screen">
+    <div class="header"><div class="brand">Busco</div><div>☰</div></div>
+    <div class="search">
+      <input class="input" placeholder="From: Central Station">
+      <input class="input" placeholder="To: City Square">
+      <div style="display:flex;gap:8px">
+        <input class="input" type="date" style="flex:1">
+        <input class="input" type="time" style="width:110px">
+      </div>
+      <button style="margin-top:8px;padding:10px;border-radius:10px;background:#2563eb;color:#fff;border:none">Search</button>
+    </div>
+    <div class="map">Map preview</div>
+  </div>
+
+  <div class="phone" aria-label="Results screen">
+    <div class="header"><div class="brand">Busco</div><div>🔔</div></div>
+    <div style="margin-top:12px"><strong>Results</strong></div>
+    <div class="result-card"><div><strong>Route 12</strong><div style="color:#6b7280">Central → City Square</div></div><div>08:15 → 08:42</div></div>
+    <div class="result-card"><div><strong>Route 8</strong><div style="color:#6b7280">Central → City Square</div></div><div>08:22 → 08:51</div></div>
+    <div class="result-card"><div><strong>Route 5</strong><div style="color:#6b7280">Central → City Square</div></div><div>08:30 → 08:59</div></div>
+  </div>
+
+  <div class="phone" aria-label="Trip detail">
+    <div class="header"><div class="brand">Busco</div><div>◀</div></div>
+    <div style="margin-top:12px"><strong>Route 12</strong><div style="color:#6b7280">Central Station → City Square</div></div>
+    <div class="map">Trip path</div>
+    <div style="margin-top:12px"><strong>Stops</strong>
+      <ol style="padding-left:16px;margin-top:8px;color:#374151">
+        <li>Central Station — 08:15</li>
+        <li>Market St — 08:23</li>
+        <li>River Rd — 08:34</li>
+        <li><strong>City Square — 08:42</strong></li>
+      </ol>
+    </div>
+    <div class="bottom">
+      <button style="flex:1;padding:12px;border-radius:10px;border:1px solid #e6eefb">Share</button>
+      <button style="flex:1;padding:12px;border-radius:10px;background:#10b981;color:#fff;border:none">Navigate</button>
+    </div>
+  </div>
+</body>
+</html>
